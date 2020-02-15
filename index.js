@@ -7,6 +7,8 @@ const hostname = '127.0.0.1';
 var server = http.createServer();
 server.on('request', doRecquest);
 
+
+
 var fs = require('fs');
 
 function doRecquest(req,res){

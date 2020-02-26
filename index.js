@@ -34,7 +34,20 @@ app.get('/api/v1/ppap', (req,res) => {
         {object: 'pen', order: 4}
     ];
     res.json(ppap);
-})
+});
+
+app.get('/JSON',(req,res) => {
+    var param = "{ \"id\": 100, \"name\": \"テストアイテム\", \"description\": \"説明だよ\", \"children\": [1, 2, 3] }"
+    res.header('Content-Type', 'application/json; charset=utf-8')
+    res.send(param);
+});
+
+
+app.get('/test/:place', (req,res) => {
+  var param = {"result":"Hello "+ req.params.place + " !","shop name":req.query.shop};  
+  res.header('Content-Type', 'application/json; charset=utf-8')
+  res.send(param);
+});
 
 
 
